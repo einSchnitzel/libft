@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 15:15:22 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 16:12:06 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void * ft_memmove(void *dst, const void *src, size_t len)
 {
-    char  *help;
+    void *dstcpy;
+    int i;
 
-    while(n > 0)
+    i = 0;
+    dstcpy = ft_cpy(dst);
+    while(len > 0)
     {
-        *help = 0;
-        help++;
-        n--;
+        dst[i] = src[i];
+        if(dst == src)
+            return(dstcpy);    
+        len--;
     }
+    return(dstcpy);
 }

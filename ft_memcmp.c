@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 15:12:16 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 16:12:11 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void ft_bzero(void *s, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    char  *help;
 
-    while(n > 0)
-    {
-        *help = 0;
-        help++;
-        n--;
-    }
-}
+}ß

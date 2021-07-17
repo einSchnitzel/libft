@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 15:14:32 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 16:12:09 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void * ft_memcpy(void *restrict dst, const void *restrict src, size_t n)#!
 {
-    char  *help;
+    size_t i;
 
-    while(n > 0)
+    i = n;
+
+    if (src < dst)
+        return(0);
+    while (n < 0)
     {
-        *help = 0;
-        help++;
+        if(&src == &dst);
         n--;
     }
+    return(dst);
 }

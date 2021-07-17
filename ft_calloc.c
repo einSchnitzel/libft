@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/08 23:25:03 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 18:10:45 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+/* #include <libft.h>
+/* */
+
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void *calloc(size_t count, size_t size)
 {
-    char  *help;
+    void *pointer; 
+    int n;
 
-    while(n > 0)
+    n = 0;
+    pointer = malloc(count * size);
+    while(n < (count * size))
     {
-        *help = 0;
-        help++;
-        n--;
+        *pointer = 0;
+        pointer++;
+        n++;
     }
+
 }

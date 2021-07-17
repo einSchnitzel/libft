@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 16:15:53 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 18:10:39 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+/* #include <libft.h>
+/* */
 
-void ft_bzero(void *s, size_t n)
+
+int ft_isupper(int n)
 {
-    char  *help;
-
-    while(n > 0)
-    {
-        *help = 0;
-        help++;
-        n--;
-    }
+    if ((n < 'A' || n > 'Z')) 
+        return(0);
+    return(1);
 }
+
+int ft_islower(int n)
+{
+    if ((n < 'a' || n > 'z'))
+        return(0);
+    return(1);
+}
+
+int ft_isalpha(int n)
+{
+    if (ft_isupper(n) || ft_islower(n))
+        return(1);
+    return(0);
+}
+

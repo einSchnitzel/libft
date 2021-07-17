@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 16:19:01 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 18:10:37 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+/* #include <libft.h>
+/* */
 
-void ft_bzero(void *s, size_t n)
+
+int ft_isalnum(int n)
 {
-    char  *help;
-
-    while(n > 0)
-    {
-        *help = 0;
-        help++;
-        n--;
-    }
+    if (ft_isalpha(n) || ft_isdigit(n))
+        return(1);
+    return(0);
 }

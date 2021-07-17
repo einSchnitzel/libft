@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 15:16:42 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 17:23:35 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void * ft_memset (void *b, int c, size_t len)
 {
-    char  *help;
+    unsigned char   letter;
+    unsigned char   *array;
 
-    while(n > 0)
+    array = (char*) b;
+    letter = c;
+
+    while (len > 0)
     {
-        *help = 0;
-        help++;
-        n--;
+        array[len - 1] = letter;
+        len--;
     }
+    return(b);
 }

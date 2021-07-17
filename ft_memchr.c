@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 18:10:30 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/17 15:15:48 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/17 16:12:03 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_bzero(void *s, size_t n)
+void * memchr(const void *s, int c, size_t n)
 {
-    char  *help;
+    int i;
 
-    while(n > 0)
+    i = 0;
+    while(i < n)
     {
-        *help = 0;
-        help++;
-        n--;
+        if (c == s[i])
+            return(location);
     }
+    return(NULL);
 }
