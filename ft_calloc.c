@@ -18,7 +18,7 @@
 
 void *calloc(size_t count, size_t size)
 {
-    void *pointer; 
+    char *pointer; 
     int n;
 
     n = 0;

@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:15:22 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 16:12:06 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/20 11:31:00 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void * ft_memmove(void *dst, const void *src, size_t len)
 {
     void *dstcpy;
-    int i;
+    size_t  i;
 
     i = 0;
     dstcpy = ft_cpy(dst);
