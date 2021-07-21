@@ -6,11 +6,13 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:12:16 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/17 16:12:11 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 10:00:01 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 
-}ß
+}

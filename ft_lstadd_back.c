@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 16:15:53 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 11:42:05 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/20 23:13:40 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/21 09:58:28 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isupper(int n)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if ((n < 'A' || n > 'Z')) 
-		return(0);
-	return(1);
-}
-
-int ft_islower(int n)
-{
-	if ((n < 'a' || n > 'z'))
-		return(0);
-	return(1);
-}
-
-int ft_isalpha(int n)
-{
-	if (ft_isupper(n) || ft_islower(n))
-		return(1);
-	return(0);
+	while (lst->next != NULL)
+	{
+		lst= lst->next;
+	}
+	lst->next = new;
 }

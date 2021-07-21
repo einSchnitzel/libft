@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 16:15:53 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 11:42:05 by smetzler         ###   ########.fr       */
+/*   Created: 2021/07/21 10:48:24 by smetzler          #+#    #+#             */
+/*   Updated: 2021/07/21 11:11:45 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isupper(int n)
+char	*ft_strchr(const char *s, int c)
 {
-	if ((n < 'A' || n > 'Z')) 
-		return(0);
-	return(1);
-}
+	int i;
 
-int ft_islower(int n)
-{
-	if ((n < 'a' || n > 'z'))
-		return(0);
-	return(1);
-}
-
-int ft_isalpha(int n)
-{
-	if (ft_isupper(n) || ft_islower(n))
-		return(1);
-	return(0);
+	i = 0;
+	while(s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			return(&s[i]);
+		}
+		i++;
+	}
+	if( c == '\0')
+		return(&s[++i]);
+	return(NULL);
 }
