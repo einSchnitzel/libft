@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:14:32 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 10:02:04 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 13:51:30 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 void * ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t i;
+	size_t	i;
+	unsigned char* contentsrc;
+	unsigned char* contentdst;
 
-	i = n;
-
-	if (src < dst)
-		return(0);
-	while (n < 0)
+	i = 0;
+	contentsrc = (unsigned char*) src;
+	contentdst = (unsigned char*) dst;
+	while(n > 0)
 	{
-		if(&src == &dst);
+		contentdst[i] = contentsrc[i];
+		i++;
 		n--;
 	}
-	return(dst);
+	return (dst);
 }

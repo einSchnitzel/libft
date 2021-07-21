@@ -6,16 +6,18 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:21:27 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 10:05:43 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 12:51:18 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	char	*help;
 
+	help = (char*) s;
 	while(n > 0)
 	{
 		*help = 0;

@@ -6,25 +6,26 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:15:22 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 10:00:41 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 13:54:20 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-//!!
-void * ft_memmove(void *dst, const void *src, size_t len)
-{
-	void	*dstcpy;
-	size_t	i;
 
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t			i;
+	unsigned char*	contentsrc;
+	unsigned char*	contentdst;
+
+	contentsrc = (unsigned char*) src;
+	contentdst = (unsigned char*) dst;
 	i = 0;
-	dstcpy = ft_cpy(dst);
-	while(len > 0)
+	while(len > 0 && &src[i] > &dst[0])
 	{
-		dst[i] = src[i];
-		if(dst == src)
-			return(dstcpy);
+		contentdst[i] = contentsrc[i];
+		i++;
 		len--;
 	}
-	return(dstcpy);
+	return (dst);
 }

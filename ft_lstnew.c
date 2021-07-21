@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 20:48:57 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 09:59:32 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 13:41:38 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ t_list	*ft_lstnew(void *content)
 
 	newlist = malloc(sizeof(t_list));
 	if (!newlist)
-		return(NULL);
+		return (NULL);
 	newlist->content = content;
 	newlist->next = NULL;
-	return(newlist);
+	return (newlist);
 }
