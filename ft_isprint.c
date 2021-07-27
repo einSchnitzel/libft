@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smetzler <smetzler@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:23:00 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 13:42:05 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/07/21 21:54:54 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int n)
+int		ft_isprint(int n)
 {
 	if (n < 127 && n > 31)
 		return (1);
