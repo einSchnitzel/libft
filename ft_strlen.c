@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:34:12 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 10:32:10 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 15:37:02 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t  length;
-	
+	size_t	length;
+
 	length = 0;
-	while(s[length] != '\0')
+	while (s[length] != '\0')
 	{
 		length++;
 	}
-	return(length);
+	return (length);
 }

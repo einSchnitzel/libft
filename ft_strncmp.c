@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 15:15:22 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/09 15:45:51 by smetzler         ###   ########.fr       */
+/*   Created: 2021/08/09 13:21:17 by smetzler          #+#    #+#             */
+/*   Updated: 2021/08/09 13:54:37 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*contentsrc;
-	unsigned char	*contentdst;
+	size_t	i;
 
-	contentsrc = (unsigned char *) src;
-	contentdst = (unsigned char *) dst;
 	i = 0;
-	while (len > 0)
+	while (i < n)
 	{
-		if (&dst[0] >= &src[i])
-			return (dst);
-		contentdst[i] = contentsrc[i];
+		if (s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')
+		{
+			return(s1[i] - s2[i]);
+		}
 		i++;
-		len--;
 	}
-	return (dst);
+	return(0);
 }

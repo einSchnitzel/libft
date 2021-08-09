@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smetzler <smetzler@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:16:22 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 21:54:50 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 14:13:05 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int n)
+int	ft_isdigit(int n)
 {
-	if (n > '9' && n < '0')
-		return (0);
-	return (1);
+	if (n >= '0' && n <= '9')
+		return (1);
+	return (0);
 }

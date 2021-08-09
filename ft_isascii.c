@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smetzler <smetzler@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:22:10 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 21:54:43 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 14:14:35 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int n)
+int	ft_isascii(int n)
 {
-	if (n < 0 && n > 127)
+	if (n >= 0 && n <= 127)
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }

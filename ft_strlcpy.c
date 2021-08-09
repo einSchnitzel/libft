@@ -6,11 +6,10 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 11:10:09 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/29 23:54:53 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 11:53:35 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
@@ -25,6 +24,6 @@ size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize
 		dst[i]= src[i];
 		i++;
 	}
-	dst[i]= '\0'
-	return(lensrc);
+	dst[i]= '\0';
+	return (lensrc);
 }

@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 10:59:36 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/30 00:50:03 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 13:36:25 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *addr;
-
-	addr = s;
-	while(*s != '\0')
-		s++;
-	s++;
-	while(addr <= s)
+	char	*addr;
+	char	*helper;
+	
+	addr = (char*)s;
+	helper =(char*)s;
+	while(*helper != '\0')
+		helper++;
+	helper++;
+	while(addr <= helper)
 	{
-		if (*s == c)
+		if (*helper == c)
 		{
-			return(s);
+			return(helper);
 		}
-		s--;
+		helper--;
 	}
 	return(NULL);
 }

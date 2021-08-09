@@ -6,14 +6,17 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:41:15 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/20 14:19:02 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/09 15:07:19 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <locale.h>
 
-int toupper(int c, locale_t loc)
+int	ft_toupper(int c)
 {
-   
+	if (c <= 'z' && c >= 'a')
+	{
+		c = c + 'A' - 'a';
+	}
+	return (c);
 }
