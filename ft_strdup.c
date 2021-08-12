@@ -6,25 +6,28 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:31:07 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 10:06:45 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:24:31 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	char			*thecopy;
-	unsigned int	length;
+	char	*thecopy;
+	int		length;
+	int		i;
 
-	length = 0;
-	while (s1[length] != '\0')
-		length++;
-	thecopy = malloc(length);
-	while(length > 0)
+	i = 0;
+	length = ft_strlen(s1);
+	thecopy = malloc(sizeof(char *) * (length + 1));
+	if (thecopy == NULL)
+		return (NULL);
+	while (i <= length)
 	{
-		thecopy[length]=s1[length];
-		length--;
+		thecopy[i] = s1[i];
+		i++;
 	}
-	return(thecopy);
+	thecopy[i] = '\0';
+	return (thecopy);
 }

@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 11:40:45 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 11:48:09 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/10 14:15:00 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while( s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		write(fd, s[i], 1);
+		write(fd, &s[i], 1);
+		i++;
 	}
 }
