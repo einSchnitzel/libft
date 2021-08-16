@@ -6,21 +6,19 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 23:08:09 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/21 13:41:01 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/16 14:07:02 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *helper;
-
-	while (lst->next != NULL)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
-		helper->content = lst->content;
-		helper->next = lst->next;
 		lst = lst->next;
 	}
-	return(helper);
+	return (lst);
 }

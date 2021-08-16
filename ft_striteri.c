@@ -6,18 +6,18 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 22:16:05 by smetzler          #+#    #+#             */
-/*   Updated: 2021/07/30 00:45:54 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/16 12:10:18 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int		i;
-	
+
 	i = 0;
-	while ( s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		f( i, s + i);
+		f(i, s + i);
 		i++;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 12:38:37 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/11 11:38:08 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/12 16:05:10 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int		i;
 	int		sign;
