@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:49:20 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/16 17:40:41 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/08/18 22:48:34 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int static	ft_allocatearray(char **array, char const *s, char c)
 		}
 		i++;
 	}
-	printf("%d", i);
 	array = (char **)malloc(sizeof(char *) * (n + 1));
 	if (!array)
 		return (1);
+	array[n] = NULL;
 	return (0);
 }
 
@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 	while (s[pos] != '\0')
 	{
 		j = 0;
-		while (s[pos] != c) // iteration or skipping through c s is missing
+		while (s[pos] != c && s[pos] != '\0') // iteration or skipping through c s is missing
 		{
 			j++;
 			pos++;
@@ -62,7 +62,8 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		array[i] = ft_substr(s, pos - j, j + 1);
 		i++;
-		pos++;
+		if (s[pos] != '\0')
+			pos++;
 	}
 	return (array);
 }
