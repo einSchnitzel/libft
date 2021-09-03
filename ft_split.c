@@ -6,129 +6,87 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:49:20 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/18 22:48:34 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 00:27:33 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int static	ft_allocatearray(char **array, char const *s, char c)
-{
-	int		i;
-	int		n;
-
-	i = 0;
-	n = 1;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			n++;
-			while (s[i] == c)
-				i++;
-			i--;
-		}
-		i++;
-	}
-	array = (char **)malloc(sizeof(char *) * (n + 1));
-	if (!array)
-		return (1);
-	array[n] = NULL;
-	return (0);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**array;
-	int		i;
-	int		j;
-	int		pos;
-
-	pos = 0;
-	array = NULL;
-	i = ft_allocatearray(array, s, c);
-	if (i == 1)
-		return (NULL);
-	while (s[pos] != '\0')
-	{
-		j = 0;
-		while (s[pos] != c && s[pos] != '\0') // iteration or skipping through c s is missing
-		{
-			j++;
-			pos++;
-		}
-		array[i] = (char *)malloc(sizeof(char) * (j + 1));
-		if (array[i] == NULL)
-			return (NULL);
-		array[i] = ft_substr(s, pos - j, j + 1);
-		i++;
-		if (s[pos] != '\0')
-			pos++;
-	}
-	return (array);
-}
-
-/*static int	ft_arraysize(char const *s, char c)
+static void	ft_cleararr(char **arr, int j)
 {
 	int	i;
-	int	n;
 
 	i = 0;
-	n = 0;
-	while (s[i] != '\0')
+	while (i < j)
 	{
-		if (s[i] == c)
-			n++;
+		free(arr[i]);
 		i++;
 	}
-	return (n);
 }
 
-static char	*ft_makestr(char const *s, char c, int n)
+int	ft_count(char const *s, char c)
 {
-	int		size;
-	char	*array;
+	unsigned int	i;
+	unsigned int	count;
 
-	size = 0;
-	while (s[size] != '\0' && n >= 0)
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		if (s[size] == c)
-			n--;
-		size++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i] != '\0')
+		{
+			count++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
 	}
-	array = malloc(sizeof(char) * (size + 1));
-	if (!array)
-		return (NULL);
-	array[size + 1] = '\0';
-	return (array);
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_divstr(char **arr, char *s, char c, unsigned int count)
 {
-	int		i;
-	int		j;
-	int		size;
-	char	**array;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	start;
 
 	i = 0;
 	j = 0;
-	size = ft_arraysize(s, c);
-	array = malloc(sizeof(char) * (size));
-	if (!array)
-		return (NULL);
-	while (s[i] != '\0' && j < size)
+	while (j < count)
 	{
-		array[j] = ft_makestr(s, c, j);
-		if (array[j] == NULL)
-			return (NULL);
-		while (s[i + j] != c)
-		{
-			array[j][i] = s[i + j];
+		while (s[i] == c)
 			i++;
+		while (s[i] != c && s[i] != '\0')
+		{
+			start = i;
+			while (s[i] != c && s[i])
+				i++;
+			arr[j] = ft_substr(s, start, (i - start));
+			if (arr[j] == NULL)
+				ft_cleararr(arr, j);
 		}
 		j++;
-		i = 0;
 	}
-	return (array);
+	arr[count] = NULL;
 }
-*/
+
+char	**ft_split(char const *s, char c)
+{
+	unsigned int	count;
+	char			**arr;
+	
+	if (!s)
+		return (NULL);
+	count = ft_count((char *)s, c);
+	arr = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!arr)
+		return (NULL);
+	ft_divstr(arr, (char *)s, c, count);
+	if (arr == NULL)
+	{
+		free(arr);
+		arr = NULL;
+	}
+	return (arr);
+}
