@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 11:38:12 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/11 17:17:28 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 15:57:27 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 
 	cpy = n;
 	length = ft_numlen(n);
-	array = (char *)malloc(sizeof(char *) * (length + 1));
+	array = (char *)malloc(sizeof(char) * (length + 1));
 	if (!array)
 		return (0);
 	array[length--] = '\0';

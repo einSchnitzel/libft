@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 23:32:59 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/11 15:54:55 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 16:03:12 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	substring = malloc((len + 1) * sizeof(char));
 	if (substring == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:15:22 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/10 10:45:37 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 15:11:29 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	contentsrc = (unsigned char *) src;
 	contentdst = (unsigned char *) dst;
 	i = 0;
-	if (src == NULL || dst == NULL)
-		return (NULL);
+	if (src == NULL && dst == NULL)
+		return (dst);
 	if (dst > src)
 	{
 		while (len > 0)

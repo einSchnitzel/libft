@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:27:51 by smetzler          #+#    #+#             */
-/*   Updated: 2021/08/16 17:01:16 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 15:50:21 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	newlst = ft_lstnew(f(lst->content));
 	if (newlst == NULL)
 		return (NULL);
-	return (lst);
 	lst = lst->next;
 	newentry = newlst;
 	while (lst)

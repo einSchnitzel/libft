@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:49:20 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/04 00:27:33 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 14:19:10 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 {
 	unsigned int	count;
 	char			**arr;
-	
+
 	if (!s)
 		return (NULL);
 	count = ft_count((char *)s, c);
