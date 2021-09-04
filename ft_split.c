@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:49:20 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/04 14:19:10 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/04 23:10:39 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,28 @@ static void	ft_cleararr(char **arr, int j)
 	}
 }
 
-int	ft_count(char const *s, char c)
+static int	ft_countwords(char const *s, char c)
 {
 	unsigned int	i;
-	unsigned int	count;
+	unsigned int	n;
 
 	i = 0;
-	count = 0;
+	n = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i] != c && s[i] != '\0')
 		{
-			count++;
+			n++;
 			while (s[i] != c && s[i] != '\0')
 				i++;
 		}
 	}
-	return (count);
+	return (n);
 }
 
-static void	ft_divstr(char **arr, char *s, char c, unsigned int count)
+static void	ft_divwrite(char **arr, char *s, char c, unsigned int words)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -53,7 +53,7 @@ static void	ft_divstr(char **arr, char *s, char c, unsigned int count)
 
 	i = 0;
 	j = 0;
-	while (j < count)
+	while (j < words)
 	{
 		while (s[i] == c)
 			i++;
@@ -68,25 +68,25 @@ static void	ft_divstr(char **arr, char *s, char c, unsigned int count)
 		}
 		j++;
 	}
-	arr[count] = NULL;
+	arr[words] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	count;
-	char			**arr;
+	unsigned int	words;
+	char			**array;
 
 	if (!s)
 		return (NULL);
-	count = ft_count((char *)s, c);
-	arr = (char **)malloc(sizeof(char *) * (count + 1));
-	if (!arr)
+	words = ft_countwords((char *)s, c);
+	array = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!array)
 		return (NULL);
-	ft_divstr(arr, (char *)s, c, count);
-	if (arr == NULL)
+	ft_divwrite(array, (char *)s, c, words);
+	if (array == NULL)
 	{
-		free(arr);
-		arr = NULL;
+		free(array);
+		array = NULL;
 	}
-	return (arr);
+	return (array);
 }
