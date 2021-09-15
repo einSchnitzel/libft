@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 12:38:37 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/04 15:47:35 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/15 19:08:42 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	ft_atoi(char *str)
 		i++;
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
-		sum = sum * 10;
-		sum = sum + (str[i] - '0');
+		sum = -sum * 10;
+		sum = -sum - (str[i] - '0');
 		i++;
 	}
-	return (sum * sign);
+	return (-sum * sign);
 }
