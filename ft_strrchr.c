@@ -6,11 +6,16 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 10:59:36 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/15 18:34:12 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/19 14:29:59 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** last location of c in s
+** returns address or NULL
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,7 +6,7 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:49:20 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/04 23:10:39 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/19 14:43:50 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ static void	ft_divwrite(char **arr, char *s, char c, unsigned int words)
 	arr[words] = NULL;
 }
 
+/*
+** len bytes of c (unsigned char) to b
+*/
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	words;

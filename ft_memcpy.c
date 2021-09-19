@@ -6,12 +6,16 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:14:32 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/05 14:15:55 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/19 14:36:50 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/*
+** n bytes from memory are src to dst undefined behavior for overlap,
+** returns original value of dst.
+*/
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t			i;
