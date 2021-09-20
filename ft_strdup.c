@@ -6,12 +6,11 @@
 /*   By: smetzler <smetzler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:31:07 by smetzler          #+#    #+#             */
-/*   Updated: 2021/09/19 14:36:37 by smetzler         ###   ########.fr       */
+/*   Updated: 2021/09/20 16:02:41 by smetzler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /*
 ** allocates enough bytes of s1 to create a copy of string 1, copies it
