@@ -9,3 +9,5 @@
 ### Learned also: Comment functions, especially if there are many, it is easy to loose the overview
 
 ### To Improve:   Keep comments short.
+
+## To Do: Continuous integration of new functions used in other projects to libft.
